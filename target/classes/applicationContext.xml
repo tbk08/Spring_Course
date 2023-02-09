@@ -12,7 +12,9 @@
     </bean>
     <bean id="musicPlayer"
           class="first.biybinaz.spring.MusicPlayer">
-        <constructor-arg ref="musicBean"/>
+        <property name="music" ref="musicBean"/>
+        <property name="name"  value="User"/>
+        <property name="volume"  value="5"/>
     </bean>
 
 </beans>
