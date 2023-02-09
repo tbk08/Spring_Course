@@ -6,15 +6,16 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
-
+    <context:property-placeholder location="musicPlayer.properties"/>
     <bean id="musicBean"
           class="first.biybinaz.spring.ClassicalMusic">
     </bean>
     <bean id="musicPlayer"
           class="first.biybinaz.spring.MusicPlayer">
         <property name="music" ref="musicBean"/>
-        <property name="name"  value="User"/>
-        <property name="volume"  value="5"/>
+
+        <property name="name"  value="${musicPlayer.name}"/>
+        <property name="volume"  value="${musicPlayer.volume}"/>
     </bean>
 
 </beans>

@@ -14,8 +14,8 @@
           class="first.biybinaz.spring.MusicPlayer">
         <property name="music" ref="musicBean"/>
 
-        <property name="name"  value="User"/>
-        <property name="volume"  value="5"/>
+        <property name="name"  value="${musicPlayer.name}"/>
+        <property name="volume"  value="${musicPlayer.volume}"/>
     </bean>
 
 </beans>
