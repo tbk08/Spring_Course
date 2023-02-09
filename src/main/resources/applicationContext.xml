@@ -10,25 +10,19 @@
     <context:property-placeholder location="musicPlayer.properties"/>
 
     <bean id="classicalMusicBean"
-          class="first.biybinaz.spring.ClassicalMusic">
+          class="first.biybinaz.spring.ClassicalMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy"
+    >
     </bean>
-    <bean id="rockMusicBean"
-          class="first.biybinaz.spring.RockMusic">
-    </bean>
-    <bean id="popMusicBean"
-          class="first.biybinaz.spring.PopMusic">
-    </bean>
-    <bean id="musicPlayer"
-          class="first.biybinaz.spring.MusicPlayer">
-        <property name="musicList">
-            <list>
-                <ref bean="classicalMusicBean"/>
-                <ref bean="rockMusicBean"/>
-                <ref bean="popMusicBean"/>
-            </list>
-        </property>
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
-    </bean>
+
+<!--    <bean id="musicPlayer"-->
+<!--          class="first.biybinaz.spring.MusicPlayer"-->
+<!--          scope="prototype">-->
+<!--        <property name="music" value="classicalMusicBean"/>-->
+
+<!--        <property name="name" value="${musicPlayer.name}"/>-->
+<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+<!--    </bean>-->
 
 </beans>

@@ -1,8 +1,5 @@
 package first.biybinaz.spring;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class MusicPlayer {
 
     private String name;
@@ -24,18 +21,16 @@ public class MusicPlayer {
         this.volume = volume;
     }
 
-    private List<Music> musicList = new ArrayList<>();
+    private Music music;
+
+    public void setMusic(Music music) {
+        this.music = music;
+    }
 
     public MusicPlayer() {
     }
 
-    public void setMusicList(List<Music> musicList) {
-        this.musicList = musicList;
-    }
-
     public void playMusic() {
-        for (Music music : musicList) {
-            System.out.println("Playing: " + music.getSong());
-        }
+        System.out.println("Playing: "+music.getSong());
     }
 }
