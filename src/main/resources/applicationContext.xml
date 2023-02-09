@@ -10,5 +10,9 @@
     <bean id="musicBean"
           class="first.biybinaz.spring.ClassicalMusic">
     </bean>
+    <bean id="musicPlayer"
+          class="first.biybinaz.spring.MusicPlayer">
+        <constructor-arg ref="musicBean"/>
+    </bean>
 
 </beans>
