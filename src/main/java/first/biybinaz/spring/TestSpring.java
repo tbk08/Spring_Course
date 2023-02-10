@@ -1,15 +1,15 @@
 package first.biybinaz.spring;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class TestSpring {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-                "applicationContext.xml"
+        AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext(
+                Config.class
         );
-        MusicPlayer musicPlayer = context.getBean("musicPlayer",MusicPlayer.class);
-        System.out.println(musicPlayer.getName());
+        MusicPlayer musicPlayer = annotationConfigApplicationContext.getBean("musicPlayer", MusicPlayer.class);
+
         System.out.println(musicPlayer.getVolume());
-        context.close();
+        System.out.println(musicPlayer.getName());
     }
 }
