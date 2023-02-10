@@ -1,5 +1,8 @@
 package first.biybinaz.spring;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class ClassicalMusic implements Music {
     public void doMyInit(){
         System.out.println("Initialization done");

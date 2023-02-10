@@ -7,22 +7,5 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
-    <context:property-placeholder location="musicPlayer.properties"/>
-
-    <bean id="classicalMusicBean"
-          class="first.biybinaz.spring.ClassicalMusic"
-          init-method="doMyInit"
-          destroy-method="doMyDestroy"
-    >
-    </bean>
-
-<!--    <bean id="musicPlayer"-->
-<!--          class="first.biybinaz.spring.MusicPlayer"-->
-<!--          scope="prototype">-->
-<!--        <property name="music" value="classicalMusicBean"/>-->
-
-<!--        <property name="name" value="${musicPlayer.name}"/>-->
-<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
-<!--    </bean>-->
-
+    <context:component-scan base-package="first.biybinaz.spring"/>
 </beans>
