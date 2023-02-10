@@ -2,16 +2,21 @@ package first.biybinaz.spring;
 
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class ClassicalMusic implements Music {
-    public void doMyInit(){
-        System.out.println("Initialization done");
+    private List<String> classicalMusicList = new ArrayList<>();
+
+    {
+        classicalMusicList.add("ClassicalMusic1");
+        classicalMusicList.add("ClassicalMusic2");
+        classicalMusicList.add("ClassicalMusic3");
     }
-    public void doMyDestroy(){
-        System.out.println("Destroying done");
-    }
+
     @Override
-    public String getSong() {
-        return "Bax";
+    public List<String> getSong() {
+        return classicalMusicList;
     }
 }

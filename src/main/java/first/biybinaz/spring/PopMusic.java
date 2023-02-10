@@ -2,9 +2,21 @@ package first.biybinaz.spring;
 
 import org.springframework.stereotype.Component;
 
-public class PopMusic implements Music{
+import java.util.ArrayList;
+import java.util.List;
+
+@Component
+public class PopMusic implements Music {
+    private List<String> popMusicList = new ArrayList<>();
+
+    {
+        popMusicList.add("popMusicList1");
+        popMusicList.add("popMusicList2");
+        popMusicList.add("popMusicList3");
+    }
+
     @Override
-    public String getSong() {
-        return "K-Pop";
+    public List<String> getSong() {
+        return popMusicList;
     }
 }
